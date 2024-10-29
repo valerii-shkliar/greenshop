@@ -51,6 +51,7 @@
 
 html {
   font-size: 14px;
+  font-weight: 400;
   font-family: 'cera_proregular', 'sans serif';
 }
 
@@ -216,10 +217,10 @@ html {
   background-image: url('../images/icons/facebook-logo.svg');
   margin-right: 4px;
 }
-/* body {
+body {
   margin-top: 100px; /*Сделано только для корректного отображения секции (при полной готовности страницы УДАЛИТЬ свойство!)*/
-/* } */
-*/ .wrapper {
+}
+.wrapper {
   max-width: 1200px;
   margin: auto;
 }
@@ -235,33 +236,32 @@ main .additional-offers .wrapper {
 main section.additional-offers article {
   display: flex;
   align-items: center;
-  padding: 37px 11px 46px 0px;
   background-color: #fbfbfb;
-  position: relative;
 }
 main section.additional-offers img {
-  position: absolute;
-  top: -60px;
+  display: block;
+  position: relative;
+  top: -50px;
   left: 0;
 }
 main section.additional-offers .content-container {
+  padding-right: 11px;
   text-align: right;
 }
 main section.additional-offers .content-container .title {
   font-family: 'cera_problack', sans-serif;
+  font-weight: 900;
   font-size: 18px;
   color: #3d3d3d;
   text-transform: uppercase;
   line-height: 133%;
   text-align: right;
   margin-bottom: 9px;
-  padding-left: 380px;
 }
 main section.additional-offers .content-container .text {
   color: #727272;
   line-height: 171%;
   margin-bottom: 25px;
-  padding-left: 264px;
 }
 main section.additional-offers .content-container .btn {
   display: inline-flex;
@@ -270,6 +270,7 @@ main section.additional-offers .content-container .btn {
   line-height: 143%;
   color: white;
   font-family: 'cera_promedium', sans-serif;
+  font-weight: 500;
   border-radius: 6px;
   padding: 10px 25px;
 }
@@ -296,6 +297,7 @@ main .blog-posts {
 main .blog-posts h2.title {
   font-size: 30px;
   font-family: 'cera_probold', sans-serif;
+  font-weight: 700;
   margin-bottom: 15px;
   line-height: 53%;
   color: #3d3d3d;
@@ -321,11 +323,13 @@ main section.blog-posts .article-container .card img {
 main section.blog-posts .article-container .card .card-content .about {
   color: #46a358;
   font-family: 'cera_promedium', sans-serif;
+  font-weight: 500;
   margin-bottom: 4px;
 }
 main section.blog-posts .article-container .card .card-content .title {
   font-size: 20px;
   font-family: 'cera_probold', sans-serif;
+  font-weight: 700;
   line-height: 114%;
   line-height: 130%;
   color: #3d3d3d;
@@ -339,6 +343,7 @@ main section.blog-posts .article-container .card .card-content .text {
 main section.blog-posts .article-container .card .card-content .btn {
   align-items: center;
   font-family: 'cera_promedium', sans-serif;
+  font-weight: 500;
   color: #3d3d3d;
   line-height: 114%;
 }

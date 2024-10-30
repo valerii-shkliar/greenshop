@@ -289,15 +289,18 @@ header .wrapper .log-in-btn {
 header .wrapper .log-in-btn::before {
   content: '';
   display: inline-block;
-  background-image: url('../images/icons/log-in.svg');
+  background-image: url('../images/icons/log-in-white.svg');
   width: 20px;
   height: 20px;
-
   margin-right: 4px;
+  transition: 0.4s;
 }
 header .wrapper .log-in-btn:hover {
   background-color: #cceb34;
   color: #3d3d3d;
+}
+header .wrapper .log-in-btn:hover::before {
+  background-image: url('../images/icons/log-in-dark.svg');
 }
 main .main-banner {
   margin-bottom: 46px;
@@ -404,7 +407,7 @@ main section.additional-offers .content-container .btn {
   font-weight: 500;
   border-radius: 6px;
   padding: 10px 25px;
-  transition: 3s;
+  transition: 0.4s;
 }
 main section.additional-offers .content-container .btn:hover {
   background-color: #cceb34;
@@ -417,7 +420,7 @@ main section.additional-offers .content-container .btn::after {
   margin-left: 3px;
   width: 18px;
   height: 18px;
-  transition: 3s; /* анимация такая длинная для отображение бага! */
+  transition: 0.4s;
 }
 
 main section.additional-offers .content-container .btn:hover::after {
@@ -479,6 +482,7 @@ main section.blog-posts .article-container .card .card-content .btn {
   font-weight: 500;
   color: #3d3d3d;
   line-height: 114%;
+  transition: 0.4s;
 }
 main section.blog-posts .article-container .card .card-content .btn:after {
   content: '';
@@ -487,6 +491,7 @@ main section.blog-posts .article-container .card .card-content .btn:after {
   height: 10px;
   background-image: url('./../images/icons/arrow-right-dark.svg');
   margin-left: 3px;
+  transition: 0.4s;
 }
 main section.blog-posts .article-container .card .card-content .btn:hover {
   color: #46a358;

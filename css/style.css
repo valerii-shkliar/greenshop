@@ -78,6 +78,7 @@ html {
   user-select: none;
   -webkit-user-select: none;
   border: 1px solid white;
+  transition: 0.4s;
 }
 .register-page .wrapper-register .close-page:hover {
   border: 1px solid #a3d8ae;
@@ -98,6 +99,7 @@ html {
   user-select: none;
   -webkit-user-select: none;
   color: #3d3d3d;
+  transition: 0.4s;
 }
 .register-page .wrapper-register .title-login {
   padding-right: 13px;
@@ -155,9 +157,11 @@ html {
   -webkit-user-select: none;
   border: none;
   margin-bottom: 36px;
+  transition: 0.4s;
 }
 .register-page .wrapper-register .btn:hover {
-  background-color: #65e87f;
+  background-color: #cceb34;
+  color: #3d3d3d;
 }
 .register-page .wrapper-register .about-option {
   font-size: 13px;
@@ -190,6 +194,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s;
 }
 .register-page .wrapper-register .google-btn {
   margin-bottom: 15px;
@@ -217,14 +222,140 @@ html {
   background-image: url('../images/icons/facebook-logo.svg');
   margin-right: 4px;
 }
-body {
-  margin-top: 100px; /*Сделано только для корректного отображения секции (при полной готовности страницы УДАЛИТЬ свойство!)*/
-}
 .wrapper {
   max-width: 1200px;
   margin: auto;
 }
+header {
+  margin-bottom: 12px;
+}
+header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(70, 163, 88, 0.5);
+  padding-top: 30px;
+}
+header .wrapper .logo-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+header .wrapper .logo-box img {
+  display: block;
+}
+header .wrapper .menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+header .wrapper .menu li {
+}
+header .wrapper .menu li:after {
+  content: '';
+  display: block;
+  max-width: 0%;
+  height: 3px;
+  background-color: #46a358;
+  transition: 0.6s;
+}
 
+header .wrapper .menu li .menu-item {
+  font-size: 16px;
+  padding-bottom: 25px;
+  color: #3d3d3d;
+}
+
+header .wrapper .menu li:hover {
+  font-weight: 700;
+}
+header .wrapper .menu li:hover:after {
+  max-width: 100%;
+}
+header .wrapper .log-in-btn {
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'cera_promedium', sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 8px 17px;
+  border-radius: 6px;
+  background-color: #46a358;
+  margin-bottom: 15px;
+  transition: 0.4s;
+}
+header .wrapper .log-in-btn::before {
+  content: '';
+  display: inline-block;
+  background-image: url('../images/icons/log-in.svg');
+  width: 20px;
+  height: 20px;
+
+  margin-right: 4px;
+}
+header .wrapper .log-in-btn:hover {
+  background-color: #cceb34;
+  color: #3d3d3d;
+}
+main .main-banner {
+  margin-bottom: 46px;
+}
+main .main-banner .wrapper {
+  background: linear-gradient(135deg, rgba(245, 245, 245, 0.5) 0%, rgba(245, 245, 245, 0.5) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .main-banner .wrapper .content-container {
+  padding-left: 40px;
+}
+main .main-banner .wrapper .content-container .greeting {
+  font-family: 'cera_promedium', sans-serif;
+  font-weight: 500;
+  line-height: 114%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3d3d3d;
+  margin-bottom: 7px;
+}
+main .main-banner .wrapper .content-container .title {
+  font-family: 'cera_problack', sans-serif;
+  font-weight: 900;
+  font-size: 70px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #3d3d3d;
+  margin-bottom: 5px;
+}
+main .main-banner .wrapper .content-container .title > span {
+  color: #46a358;
+}
+main .main-banner .wrapper .content-container .text {
+  line-height: 171%;
+  color: #727272;
+  margin-bottom: 44px;
+}
+main .main-banner .wrapper .content-container .btn {
+  font-family: 'cera_probold', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #46a358;
+  border-radius: 6px;
+  padding: 11px 27px;
+  transition: 0.4s;
+}
+main .main-banner .wrapper .content-container .btn:hover {
+  background-color: #cceb34;
+  color: #3d3d3d;
+}
+main .main-banner .wrapper > img {
+  display: block;
+}
 main .additional-offers {
   margin-bottom: 138px;
 }
@@ -273,21 +404,23 @@ main section.additional-offers .content-container .btn {
   font-weight: 500;
   border-radius: 6px;
   padding: 10px 25px;
+  transition: 3s;
 }
-main section.additional-offers .content-container .btn:after {
-  content: '';
-  display: inline-block;
-  margin-left: 3px;
-  width: 18px;
-  height: 18px;
-  background-image: url('./../images/icons/arrow-right-white-2.svg');
-}
-
 main section.additional-offers .content-container .btn:hover {
   background-color: #cceb34;
   color: #3d3d3d;
 }
-main section.additional-offers .content-container .btn:hover:after {
+main section.additional-offers .content-container .btn::after {
+  content: '';
+  display: inline-block;
+  background-image: url('./../images/icons/arrow-right-white-2.svg');
+  margin-left: 3px;
+  width: 18px;
+  height: 18px;
+  transition: 3s; /* анимация такая длинная для отображение бага! */
+}
+
+main section.additional-offers .content-container .btn:hover::after {
   background-image: url('./../images/icons/arrow-right-dark-2.svg');
 }
 

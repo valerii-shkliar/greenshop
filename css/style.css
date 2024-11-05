@@ -44,23 +44,23 @@
 }
 @font-face {
   font-family: 'cera_prolight';
-  src: url('cerapro-light-webfont.eot');
-  src: url('cerapro-light-webfont.eot?#iefix') format('embedded-opentype'),
-    url('cerapro-light-webfont.woff2') format('woff2'),
-    url('cerapro-light-webfont.woff') format('woff'),
-    url('cerapro-light-webfont.ttf') format('truetype'),
-    url('cerapro-light-webfont.svg#cera_prolight') format('svg');
+  src: url('./../cerapro-light-webfont.eot');
+  src: url('./../cerapro-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./../cerapro-light-webfont.woff2') format('woff2'),
+    url('./../cerapro-light-webfont.woff') format('woff'),
+    url('./../cerapro-light-webfont.ttf') format('truetype'),
+    url('./../cerapro-light-webfont.svg#cera_prolight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'encode_sans_expandedregular';
-  src: url('encodesansexpanded-regular-webfont.eot');
-  src: url('encodesansexpanded-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('encodesansexpanded-regular-webfont.woff2') format('woff2'),
-    url('encodesansexpanded-regular-webfont.woff') format('woff'),
-    url('encodesansexpanded-regular-webfont.ttf') format('truetype'),
-    url('encodesansexpanded-regular-webfont.svg#encode_sans_expandedregular') format('svg');
+  src: url('./../encodesansexpanded-regular-webfont.eot');
+  src: url('./../encodesansexpanded-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./../encodesansexpanded-regular-webfont.woff2') format('woff2'),
+    url('./../encodesansexpanded-regular-webfont.woff') format('woff'),
+    url('./../encodesansexpanded-regular-webfont.ttf') format('truetype'),
+    url('./../encodesansexpanded-regular-webfont.svg#encode_sans_expandedregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -510,10 +510,159 @@ main .catalog .wrapper .right-side .cards-container {
   gap: 70px 33px;
   margin-bottom: 90px;
 }
-main .catalog .wrapper .right-side .cards-container .card .picture {
-  display: block;
+main .catalog .wrapper .right-side .cards-container .card {
+  border-top: 1px solid transparent;
+  transition: all 0.6s;
+}
+main .catalog .wrapper .right-side .cards-container .card:hover {
+  border-top: 1px solid #46a358;
+}
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container:hover
+  .icons-container {
+  opacity: 1;
+  visibility: visible;
+}
+main .catalog .wrapper .right-side .cards-container .card .picture-container {
   background-color: #fbfbfb;
   margin-bottom: 12px;
+  width: 258px;
+  height: 300px;
+  position: relative;
+}
+main .catalog .wrapper .right-side .cards-container .card .picture-container .icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s;
+}
+main .catalog .wrapper .right-side .cards-container .card .picture-container .icons-container .cart,
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .favorites,
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .search {
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.6s;
+}
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .cart {
+  background-image: url('../images/icons/cart-dark.svg');
+}
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .cart:hover {
+  background-image: url('../images/icons/cart-green.svg');
+}
+
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .favorites {
+  background-image: url('../images/icons/favorites-dark.svg');
+}
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .favorites:hover {
+  background-image: url('../images/icons/favorites-green.svg');
+}
+
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .search {
+  background-image: url('../images/icons/search-dark.svg');
+}
+main
+  .catalog
+  .wrapper
+  .right-side
+  .cards-container
+  .card
+  .picture-container
+  .icons-container
+  .search:hover {
+  background-image: url('../images/icons/search-green.svg');
+}
+main .catalog .wrapper .right-side .cards-container .card .picture-container .percent-sale {
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  padding: 7px 9px;
+  background-color: #46a358;
+}
+main .catalog .wrapper .right-side .cards-container .card .picture-container .percent-sale span {
+  font-family: 'cera_promedium', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+main .catalog .wrapper .right-side .cards-container .card .picture {
+  display: block;
+  width: 100%;
 }
 main .catalog .wrapper .right-side .cards-container .card .name {
   font-size: 16px;
@@ -526,6 +675,15 @@ main .catalog .wrapper .right-side .cards-container .card .costs {
   font-size: 18px;
   line-height: 89%;
   color: #46a358;
+}
+main .catalog .wrapper .right-side .cards-container .card .costs .sale {
+  font-family: 'cera_proregular', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 89%;
+  color: #a5a5a5;
+  text-decoration: line-through;
+  margin-left: 16px;
 }
 main .catalog .wrapper .right-side .pagination-container {
   display: flex;

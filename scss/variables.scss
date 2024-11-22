@@ -1,0 +1,33 @@
+$mainColor: #46a358;
+$darkColor: #3d3d3d;
+$grayColor: #727272;
+$lightGrayBackgroundColor: #fbfbfb;
+
+$primaryFontLight: 'cera_prolight', 'sans serif';
+$primaryFontRegular: 'cera_proregular', 'sans serif';
+$primaryFontMedium: 'cera_promedium', 'sans serif';
+$primaryFontBold: 'cera_probold', 'sans serif';
+$primaryFontBlack: 'cera_problack', 'sans serif';
+$secondaryFontRegular: 'encode_sans_expandedregular', 'sans serif';
+
+@mixin before_after($background-image: none, $width, $height: $width) {
+  content: '';
+  display: inline-block;
+  background-image: url($background-image);
+  width: $width;
+  height: $height;
+}
+
+@mixin flex_verticalAlign($position) {
+  display: flex;
+  align-items: $position;
+}
+@mixin flex_horizonAlign($position) {
+  display: flex;
+  justify-content: $position;
+}
+@mixin flex_AlignBooth($positionX, $positionY) {
+  display: flex;
+  justify-content: $positionX;
+  align-items: $positionY;
+}

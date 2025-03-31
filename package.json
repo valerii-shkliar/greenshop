@@ -1,0 +1,28 @@
+{
+  "name": "greenshop",
+  "version": "1.0.0",
+  "description": "project greenshop is a market of natural planets and information about it.",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "keywords": [
+    "greenshop",
+    "plant",
+    "natural"
+  ],
+  "author": "Shkliar Valerii",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-sass": "^6.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.84.0"
+  }
+}

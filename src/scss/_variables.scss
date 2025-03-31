@@ -14,6 +14,7 @@ $secondaryFontRegular: 'encode_sans_expandedregular', 'sans serif';
   content: '';
   display: inline-block;
   background-image: url($background-image);
+  background-position: center;
   width: $width;
   height: $height;
 }

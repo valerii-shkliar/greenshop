@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'cera_problack';
-  src: url('./../cerapro-black-webfont.eot');
-  src: url('./../cerapro-black-webfont.eot?#iefix') format('embedded-opentype'),
-    url('./../cerapro-black-webfont.woff2') format('woff2'),
-    url('./../cerapro-black-webfont.woff') format('woff'),
-    url('./../cerapro-black-webfont.ttf') format('truetype'),
-    url('./../cerapro-black-webfont.svg#cera_problack') format('svg');
+  src: url('./../fonts/cerapro-black-webfont.eot');
+  src: url('./../fonts/cerapro-black-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/cerapro-black-webfont.woff2') format('woff2'),
+    url('./../fonts/cerapro-black-webfont.woff') format('woff'),
+    url('./../fonts/cerapro-black-webfont.ttf') format('truetype'),
+    url('./../fonts/cerapro-black-webfont.svg#cera_problack') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -45,23 +45,24 @@
 }
 @font-face {
   font-family: 'cera_prolight';
-  src: url('./../cerapro-light-webfont.eot');
-  src: url('./../cerapro-light-webfont.eot?#iefix') format('embedded-opentype'),
-    url('./../cerapro-light-webfont.woff2') format('woff2'),
-    url('./../cerapro-light-webfont.woff') format('woff'),
-    url('./../cerapro-light-webfont.ttf') format('truetype'),
-    url('./../cerapro-light-webfont.svg#cera_prolight') format('svg');
+  src: url('./../fonts/cerapro-light-webfont.eot');
+  src: url('./../fonts/cerapro-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/cerapro-light-webfont.woff2') format('woff2'),
+    url('./../fonts/cerapro-light-webfont.woff') format('woff'),
+    url('./../fonts/cerapro-light-webfont.ttf') format('truetype'),
+    url('./../fonts/cerapro-light-webfont.svg#cera_prolight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'encode_sans_expandedregular';
-  src: url('./../encodesansexpanded-regular-webfont.eot');
-  src: url('./../encodesansexpanded-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('./../encodesansexpanded-regular-webfont.woff2') format('woff2'),
-    url('./../encodesansexpanded-regular-webfont.woff') format('woff'),
-    url('./../encodesansexpanded-regular-webfont.ttf') format('truetype'),
-    url('./../encodesansexpanded-regular-webfont.svg#encode_sans_expandedregular') format('svg');
+  src: url('./../fonts/encodesansexpanded-regular-webfont.eot');
+  src: url('./../fonts/encodesansexpanded-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/encodesansexpanded-regular-webfont.woff2') format('woff2'),
+    url('./../fonts/encodesansexpanded-regular-webfont.woff') format('woff'),
+    url('./../fonts/encodesansexpanded-regular-webfont.ttf') format('truetype'),
+    url('./../fonts/encodesansexpanded-regular-webfont.svg#encode_sans_expandedregular')
+      format('svg');
   font-weight: normal;
   font-style: normal;
 }

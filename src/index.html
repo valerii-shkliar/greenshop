@@ -46,6 +46,10 @@
             </a>
           </div>
           <nav class="navbar">
+            <form action="GET">
+              <input  class="search" type="text" placeholder="Search plants, tips, or articles...">
+              <a href="" class="search-btn"></a>
+            </form>
             <ul class="menu">
               <li class="active">
                 <a href="#" class="menu-item">Home</a>
@@ -76,6 +80,12 @@
                 <a href="#" class="menu-item">Blogs</a>
               </li>
             </ul>
+            <a href="./registration.html" class="log-in-btn">
+              <svg class="icon">
+                <use xlink:href="./images/sprites/sprite-arrows.svg#log-in-dark"></use>
+              </svg>
+              Login
+            </a>
           </nav>
           <div class="menu-container">
             <a href="#" class="search-btn"></a>
@@ -103,17 +113,12 @@
         </p>
         <a href="#" class="btn">SHOP NOW</a>
       </div>
-      <img width="507" height="450" src="./images/plant-25.png" alt="plant" />
+      <img width="507" height="450" src="./images/main-banner.png" alt="plant" />
+      <div class="main-banner-mobile">
+        <img width="230" height="208" src="./images/main-banner-mobile.png" alt="plant" />
+        <a href="#" class="btn">SHOP NOW</a>
+      </div>
     </div> 
-  <!-- <div class="owl-carousel">
-            <div>Your Content</div>
-            <div>Your Content</div>
-            <div>Your Content</div>
-            <div>Your Content</div>
-            <div>Your Content</div>
-            <div>Your Content</div>
-            <div>Your Content</div>
-          </div>  -->
   </section>
   <section class="catalog">
     <div class="wrapper">
@@ -420,15 +425,18 @@
     </div>
   </section>
   <section class="additional-offers">
-    <div class="wrapper">
+    <div class="wrapper owl-carousel">
       <article>
-        <img
-          width="287px"
+        <div class="container">
+          <div class="img-container">
+            <img
+          width="292px"
           height="292px"
           src="./images/plant_14.png"
           alt="plant"
           class="image-plant"
         />
+          </div>
         <div class="content-container">
           <h3 class="title">
             Summer cactus<br />
@@ -443,15 +451,19 @@
             </svg>
           </a>
         </div>
+        </div>
       </article>
       <article>
-        <img
-          width="289px"
+        <div class="container">
+          <div class="img-container">
+            <img
+          width="287px"
           height="287px"
           src="./images/plant_15.png"
           alt="plant"
           class="image-plant"
         />
+          </div>
         <div class="content-container">
           <h3 class="title">Styling Trends <br />& much more</h3>
           <p class="text">
@@ -462,6 +474,7 @@
               <use xlink:href="./images/sprites/sprite-arrows.svg#arrow-right-green-find-more"></use>
             </svg>
           </a>
+        </div>
         </div>
       </article>
     </div>

@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+$size: 70px;
+
+.preload-container {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: all ease-out;
+
+  .status-loading {
+    font-family: $primaryFontMedium;
+    font-size: 18px;
+    color: $darkColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+
+  .preloader {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid $mainColor;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    &::after {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      border-bottom: 4px solid $mainColor;
+      border-left: 4px solid transparent;
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+.preload-container.hide {
+  display: none;
+}

@@ -1,5 +1,5 @@
-@import 'fonts';
-@import 'variables';
+@use 'fonts' as *;
+@use 'variables' as *;
 
 .register-page {
   max-width: 500px;

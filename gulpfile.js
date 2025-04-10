@@ -58,7 +58,7 @@ function build() {
 function start(done) {
   browserSync.init({
     server: {
-      baseDir: './dist',
+      baseDir: '.',
     },
   });
   watch('./src/*.html', series(copyHTML, reload));

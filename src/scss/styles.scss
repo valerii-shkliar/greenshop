@@ -1,6 +1,9 @@
-@import 'fonts';
-@import 'variables';
-@import 'registration';
+@use 'preloader';
+@use 'fonts' as *;
+@use 'variables' as *;
+@use 'registration' as *;
+@use 'mobile_menu' as *;
+
 html {
   font-size: 14px;
   font-weight: 400;
@@ -1762,9 +1765,5 @@ footer {
     color: $darkColor;
     text-align: center;
     padding: 16px 0px;
-
-    // @media screen and (max-width: 744px) {
-    //   margin-bottom: 16px;
-    // }
   }
 }

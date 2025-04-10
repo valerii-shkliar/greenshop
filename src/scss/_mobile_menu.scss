@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 @media screen and (max-width: 744px) {
   .wrapper {

@@ -6,7 +6,12 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 
 function copyJS() {
-  return src('./src/js/*.js').pipe(concat('all.min.js')).pipe(uglify()).pipe(dest('./dist/js/'));
+  return src('./src/js/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(concat('all.min.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest('./dist/js/'));
 }
 function copyLibraryJS() {
   return src('./src/js/owl-carousel/*.js').pipe(dest('./dist/js/owl-carousel/'));
@@ -40,7 +45,7 @@ function copyFont() {
   }).pipe(dest('./dist/fonts/'));
 }
 function copyHTML() {
-  return src('./src/*.html').pipe(dest('./dist/'));
+  return src('./src/html/*.html').pipe(dest('./dist/html/'));
 }
 
 function build() {
@@ -49,10 +54,10 @@ function build() {
     copySVG,
     copySprites,
     copyFont,
-    copyHTML,
     copyCSS,
     copyLibraryJS,
-    copyJS
+    copyJS,
+    copyHTML
   );
 }
 function start(done) {
@@ -61,7 +66,7 @@ function start(done) {
       baseDir: '.',
     },
   });
-  watch('./src/*.html', series(copyHTML, reload));
+  watch('./src/html/*.html', series(copyHTML, reload));
   watch('./src/scss/**/*.scss', series(copyCSS, reload));
   watch('./src/js/owl-carousel/*.js', series(copyLibraryJS, reload));
   watch('./src/js/*.js', series(copyJS, reload));

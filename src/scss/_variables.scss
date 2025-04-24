@@ -10,13 +10,15 @@ $primaryFontBold: 'cera_probold', 'sans serif';
 $primaryFontBlack: 'cera_problack', 'sans serif';
 $secondaryFontRegular: 'encode_sans_expandedregular', 'sans serif';
 
-@mixin before_after($background-image: none, $width, $height: $width) {
+@mixin before_after($background-image: false, $width, $height: $width) {
   content: '';
   display: inline-block;
-  background-image: url($background-image);
   background-position: center;
   width: $width;
   height: $height;
+  @if $background-image {
+    background-image: url($background-image);
+  }
 }
 
 @mixin flex_verticalAlign($position) {

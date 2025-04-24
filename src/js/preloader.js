@@ -45,11 +45,11 @@ function lookScroll() {
     if (paddingBodyRight) {
       addPaddingRightOfBody();
     } else {
-      paddingBodyRight = Number(window.getComputedStyle(body).paddingRight.slice(0, 2));
+      paddingBodyRight = Number($body.css('paddingRight').slice(0, 2));
       addPaddingRightOfBody();
     }
   }
-  document.body.style.overflow = 'hidden';
+  $body.css('overflow', 'hidden');
 
   function addPaddingRightOfBody() {
     document.body.style.paddingRight = String(paddingBodyRight + differ) + 'px';
@@ -60,7 +60,7 @@ function unLookScroll() {
   if (differ) {
     removePaddingRightOfBody();
   }
-  document.body.style.overflow = 'visible';
+  $body.css('overflow', '');
 
   function removePaddingRightOfBody() {
     document.body.style.paddingRight = String(paddingBodyRight - differ) + 'px';

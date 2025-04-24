@@ -44,7 +44,7 @@ header {
       .burger-menu {
         display: none;
 
-        @media screen and (max-width: 744px) {
+        @media screen and (max-width: 870px) {
           display: block;
         }
       }
@@ -57,7 +57,7 @@ header {
           display: block;
         }
 
-        @media screen and (max-width: 744px) {
+        @media screen and (max-width: 870px) {
           margin-bottom: 0px;
         }
       }
@@ -65,17 +65,20 @@ header {
 
     .navbar {
       padding-top: 20px;
+      transition: 0.6s;
 
-      form {
+      form[name='search'] {
         display: none;
       }
+
       .menu {
         @include flex_verticalAlign(center);
         gap: 50px;
+        transition: 0.6s;
 
         > li {
           &::after {
-            @include before_after(none, initial, 3px);
+            @include before_after(false, initial, 3px);
             display: block;
             max-width: 0%;
             transition: max-width 0.6s, background-color 0.6s ease-out;
@@ -200,35 +203,8 @@ header {
             max-width: 100%;
           }
         }
-        @media screen and (max-width: 744px) {
+        @media screen and (max-width: 870px) {
           flex-direction: column;
-        }
-      }
-      .log-in-btn {
-        display: none;
-      }
-      @media screen and (max-width: 744px) {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        z-index: 10;
-        left: -200px;
-        top: 98%;
-        background-color: #fff;
-        min-width: 372px;
-        padding: 24px 0px 24px 24px;
-        border-bottom: 1px solid #a2d0ab;
-        transition: 0.6s;
-      }
-    }
-    .navbar.active {
-      @media screen and (max-width: 744px) {
-        left: 0px;
-        visibility: visible;
-        opacity: 1;
-        transition: 0.6s;
-
-        .menu {
           align-items: flex-start;
           gap: 24px;
 
@@ -237,6 +213,49 @@ header {
               padding-bottom: 16px;
             }
           }
+        }
+
+        @media screen and (max-width: 650px) {
+          border-bottom: 1px solid rgba(70, 163, 88, 0.1);
+          padding-bottom: 16px;
+          margin-bottom: 40px;
+        }
+      }
+      .log-in-btn {
+        display: none;
+
+        @media screen and (max-width: 650px) {
+          @include log-in-btn();
+          display: inline-flex;
+        }
+      }
+      @media screen and (max-width: 870px) {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 10;
+        left: -200px;
+        top: 98%;
+        background-color: #fff;
+        min-width: 372px;
+        padding: 24px;
+        border-bottom: 1px solid #a2d0ab;
+        transition: 0.6s;
+      }
+      @media screen and (max-width: 650px) {
+        form[name='search'] {
+          display: block;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .navbar.active {
+      @media screen and (max-width: 870px) {
+        left: 0px;
+        visibility: visible;
+        opacity: 1;
+
+        .menu {
           li.nested-drop-down {
             a.menu-item {
               @include flex_verticalAlign(center);
@@ -309,19 +328,16 @@ header {
           }
         }
       }
-      @media screen and (max-width: 460px) {
-        right: 0px;
-        border-bottom: none;
 
+      @media screen and (max-width: 650px) {
         form {
           position: relative;
-          margin-bottom: 24px;
 
           .search {
             display: block;
             border: 1px solid #eaeaea;
             border-radius: 5px;
-            padding: 14px 0px 14px 12px;
+            padding: 12px 40px 12px 12px;
             width: 100%;
           }
           .search::placeholder {
@@ -340,15 +356,11 @@ header {
             right: 12px;
           }
         }
-        .menu {
-          border-bottom: 1px solid rgba(70, 163, 88, 0.1);
-          padding-bottom: 16px;
-          margin-bottom: 40px;
-        }
-        .log-in-btn {
-          @include log-in-btn();
-          display: inline-flex;
-        }
+      }
+      @media screen and (max-width: 460px) {
+        right: 0px;
+        border-bottom-color: transparent;
+        width: 100%;
       }
     }
 
@@ -356,12 +368,65 @@ header {
       @include flex_verticalAlign(center);
       gap: 30px;
       margin-bottom: 18px;
+      position: relative;
 
-      .search-btn {
-        width: 20px;
-        height: 20px;
-        background-image: url('../images/icons/search-dark.svg');
+      .search-box {
+        display: flex;
+        align-items: center;
+
+        .search-box-input {
+          position: relative;
+          right: -32px;
+          width: 0px;
+          color: #3d3d3d;
+          background-color: #eee;
+          font-family: $primaryFontRegular;
+          padding: 6px 12px;
+          transition: 0.7s;
+          border-radius: 50px;
+          border: 1px solid rgba(70, 163, 88, 0.1);
+          opacity: 0;
+          visibility: hidden;
+
+          &::placeholder {
+            font-family: $primaryFontRegular;
+            color: #3d3d3d;
+            opacity: 0.7;
+          }
+          @media screen and (max-width: 540px) {
+            display: none;
+          }
+        }
+        .search-btn {
+          width: 20px;
+          height: 20px;
+          background-image: url('../images/icons/search-dark.svg');
+          z-index: 11;
+          position: relative;
+        }
+        &:hover {
+          .search-box-input {
+            width: 340px;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        @media screen and (max-width: 1080px) {
+          &:hover {
+            .search-box-input {
+              width: 260px;
+            }
+          }
+        }
+        @media screen and (max-width: 700px) {
+          &:hover {
+            .search-box-input {
+              width: 240px;
+            }
+          }
+        }
       }
+
       .cart-btn {
         width: 24px;
         height: 24px;
@@ -422,12 +487,31 @@ header {
             stroke: $mainColor;
           }
         }
-        @media screen and (max-width: 460px) {
+        @media screen and (max-width: 650px) {
           display: none;
         }
       }
+      @media screen and (max-width: 700px) {
+        gap: 20px;
+      }
     }
-    @media screen and (max-width: 744px) {
+    @media screen and (max-width: 1020px) {
+      &:has(.menu-container .search-box:hover) nav.navbar > ul.menu {
+        margin-right: -20px;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      &:has(.menu-container .search-box:hover) nav.navbar > ul.menu {
+        gap: 30px;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      &:has(.menu-container .search-box:hover) nav.navbar > ul.menu {
+        margin-right: -30px;
+        gap: 20px;
+      }
+    }
+    @media screen and (max-width: 870px) {
       padding: 6px 24px;
 
       .logo-box,
@@ -436,7 +520,8 @@ header {
       }
     }
     @media screen and (max-width: 460px) {
-      padding: 4px 16px;
+      padding-right: 16px;
+      padding-left: 16px;
     }
   }
 }
@@ -653,30 +738,53 @@ main {
               .range {
                 position: absolute;
                 background-color: $mainColor;
+                top: 0;
                 border-radius: 10px;
-                width: 160px;
                 height: 4px;
               }
-              .marker {
-                cursor: pointer;
+              .marker[type='range'] {
+                pointer-events: none;
+                background: none;
                 position: absolute;
-                top: -5px;
-                background-color: $mainColor;
-                border-radius: 100%;
-                width: 15px;
-                height: 15px;
-                border: 3px solid white;
+                top: -8px;
+                width: 100%;
+                -webkit-appearance: none;
+                appearance: none;
                 transition: 0.4s;
 
-                &:hover {
-                  transform: scale(130%);
+                &::-webkit-slider-thumb {
+                  pointer-events: all;
+                  cursor: pointer;
+                  box-sizing: content-box;
+                  background: $mainColor;
+                  border-radius: 50%;
+                  width: 15px;
+                  height: 15px;
+                  border: 3px solid white;
+                  -webkit-appearance: none;
+                  appearance: none;
+                  transition: 0.4s;
+
+                  &:hover {
+                    transform: scale(130%);
+                  }
                 }
-              }
-              .marker.min-price {
-                left: 0px;
-              }
-              .marker.max-price {
-                left: 155px;
+                &::-moz-range-thumb {
+                  pointer-events: all;
+                  cursor: pointer;
+                  box-sizing: content-box;
+                  background: $mainColor;
+                  border-radius: 50%;
+                  width: 15px;
+                  height: 15px;
+                  border: 3px solid white;
+                  appearance: none;
+                  transition: 0.4s;
+
+                  &:hover {
+                    transform: scale(130%);
+                  }
+                }
               }
             }
           }
@@ -686,7 +794,7 @@ main {
             font-size: 15px;
             transition: 0.4s;
 
-            .price-range {
+            .price-content {
               font-family: $primaryFontBold;
               font-weight: 700;
               color: #46a358;
@@ -787,7 +895,7 @@ main {
                 transition: 0.4s;
               }
               &::after {
-                @include before_after(none, initial, 2px);
+                @include before_after(false, initial, 2px);
                 display: block;
                 max-width: 0%;
                 background-color: $mainColor;
@@ -824,6 +932,9 @@ main {
           .filter-setting {
             margin-top: 12px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
 
             .title-sorting {
               font-size: 15px;
@@ -834,23 +945,52 @@ main {
                 display: none;
               }
             }
+            .form-cards-sorting {
+              .select-cards-sorting {
+                option {
+                  cursor: pointer;
+                }
+              }
+              .ui-selectmenu-button.ui-button.ui-widget {
+                border: 1px solid transparent;
+                margin: initial;
+                padding: initial;
+                background-color: #fff;
+                width: initial;
+                font-family: $primaryFontRegular;
+                font-size: 15px;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
 
-            .opt-sorting {
-              display: inline-flex;
-              align-items: center;
-              gap: 5px;
-              margin-left: 8px;
-              font-size: 15px;
-              line-height: 107%;
-              color: $darkColor;
-              cursor: pointer;
-              user-select: none;
-              -webkit-user-select: none;
-
-              &::after {
-                @include before_after('../images/icons/arrow-down-bottom-dark.svg', 16px);
+                .ui-selectmenu-icon.ui-icon.ui-icon-triangle-1-s {
+                  background-image: url('../images/icons/arrow-down-bottom-dark.svg');
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  order: 2;
+                }
+                .ui-selectmenu-text {
+                  margin: initial;
+                }
               }
             }
+
+            // .opt-sorting {
+            //   display: inline-flex;
+            //   align-items: center;
+            //   gap: 5px;
+            //   margin-left: 8px;
+            //   font-size: 15px;
+            //   line-height: 107%;
+            //   color: $darkColor;
+            //   cursor: pointer;
+            //   user-select: none;
+            //   -webkit-user-select: none;
+
+            //   &::after {
+            //     @include before_after('../images/icons/arrow-down-bottom-dark.svg', 16px);
+            //   }
+            // }
             @media screen and (max-width: 640px) {
               order: 3;
             }

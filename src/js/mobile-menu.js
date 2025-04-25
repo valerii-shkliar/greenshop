@@ -69,8 +69,10 @@ $(function () {
   }
 
   function initAnimationAfterResize() {
-    hideMenu();
-    cancelAnimate();
+    if ($(NAVBAR_ACTIVE_SELECTOR)[0]) {
+      hideMenu();
+      cancelAnimate();
+    }
   }
 
   function onDocumentClick(e) {
